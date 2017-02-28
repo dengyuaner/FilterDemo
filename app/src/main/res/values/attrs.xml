@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- RadioButton Attribute -->
+    <declare-styleable name="RadioButton">
+        <attr name="radio_color" format="color"/>
+        <attr name="radio_checked_color" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="MySpinnerView">
+        <attr name="msv_title" format="string"/>
+        <attr name="msv_array" format="reference"/>
+        <attr name="msv_arrowTint" format="color"/>
+        <attr name="msv_hideArrow" format="boolean"/>
+        <attr name="msv_backgroundSelector" format="integer"/>
+        <attr name="msv_textTint" format="color"/>
+        <attr name="msv_isShow" format="boolean"/>
+    </declare-styleable>
+</resources>

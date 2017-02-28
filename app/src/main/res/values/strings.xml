@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">FilterDemo</string>
+
+    <string name="filter">筛选</string>
+    <string name="ensure">确定</string>
+</resources>
