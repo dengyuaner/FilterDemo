@@ -2,10 +2,10 @@ package com.dy.filter;
 
 import android.content.Context;
 import android.support.v4.widget.DrawerLayout;
-import android.text.TextUtils;
+
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +16,7 @@ import com.dy.filter.bean.FilterDataItem;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.List;
+
 
 /**
  * 类名 FilterFragment
@@ -30,8 +30,8 @@ import java.util.List;
 public class FilterFragment extends BaseFragment implements View.OnClickListener {
     private DrawerLayout mDrawerLayout;
     private FrameLayout mDrawerContent;
-    //private RelativeLayout rl_department;
-    private ImageView imgBack;
+
+
 
     private FilterData mFilterDatas;
     private MySpinnerView groupView, timeView, exponentView;
@@ -70,8 +70,6 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
 
         mDrawerLayout = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
         mDrawerContent = (FrameLayout) getActivity().findViewById(R.id.drawer_content);
-        imgBack = (ImageView) rootView.findViewById(R.id.iv_back);
-        imgBack.setOnClickListener(this);
         groupView = (MySpinnerView) rootView.findViewById(R.id.groupView);
         timeView = (MySpinnerView) rootView.findViewById(R.id.timeView);
         exponentView = (MySpinnerView) rootView.findViewById(R.id.exponentView);
@@ -103,9 +101,7 @@ public class FilterFragment extends BaseFragment implements View.OnClickListener
             }
 
         }
-        if (v.getId() == R.id.tvFilter) {
-            mDrawerLayout.closeDrawer(mDrawerContent);
-        }
+
     }
 
     public interface OnFragmentListener {
