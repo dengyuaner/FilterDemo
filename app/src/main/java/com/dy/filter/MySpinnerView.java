@@ -397,18 +397,18 @@ public class MySpinnerView extends LinearLayout implements MySpinnerAdapter.Radi
      */
     private void spinnerClick(int position) {
         final FilterDataItem bean = mFilterDataItems.get(position);
-        System.out.println("点击的位置" + position);
-        if (!bean.isChecked()) {
-            //更改点击状态
-            bean.setChecked(true);
-
-            //把最近的已经设为true的变为false
-            if (lastPos != -1) {
-                FilterDataItem item = mFilterDataItems.get(lastPos);
-                item.setChecked(false);
-            }
-
-        }
+//        System.out.println("点击的位置" + position);
+//        if (!bean.isChecked()) {
+//            //更改点击状态
+//            bean.setChecked(true);
+//
+//            //把最近的已经设为true的变为false
+//            if (lastPos != -1) {
+//                FilterDataItem item = mFilterDataItems.get(lastPos);
+//                item.setChecked(false);
+//            }
+//
+//        }
 
         selectedIndex = position;
 
