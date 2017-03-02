@@ -205,16 +205,16 @@ public class MySpinnerView extends LinearLayout implements MySpinnerAdapter.Radi
         }
 
 
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//                spinnerClick(position);
-//
-//
-//            }
-//        });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                spinnerClick(position);
+
+
+            }
+        });
 
 
         addView(titleView);
