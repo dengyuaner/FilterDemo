@@ -130,10 +130,12 @@ public class RadioButton extends CompoundButton {
                 break;
             case MotionEvent.ACTION_UP:
                 if (!mMoveOutside) {
+                    System.out.println("点击了");
                     mState = StateTouchUp;
-                    setChecked(!isChecked());
+                    //setChecked(!isChecked());
                     mStartTime = System.currentTimeMillis();
-                    invalidate();
+                    //invalidate();
+                    performClick();
                 }
                 break;
             case MotionEvent.ACTION_CANCEL:
@@ -141,7 +143,7 @@ public class RadioButton extends CompoundButton {
                 invalidate();
                 break;
         }
-        return super.onTouchEvent(event);
+        return true;
     }
 
     private int rippleColor(int color) {
@@ -150,6 +152,11 @@ public class RadioButton extends CompoundButton {
         int green = Color.green(color);
         int blue = Color.blue(color);
         return Color.argb(alpha, red, green, blue);
+    }
+
+    public void setChecked(boolean checked) {
+        super.setChecked(checked);
+        invalidate();
     }
 
     @Override
@@ -188,6 +195,7 @@ public class RadioButton extends CompoundButton {
                 postInvalidate();
                 break;
         }
+
         if (isChecked()) {
             ripplePaint.setColor(rippleColor(mCheckedColor));
 
