@@ -44,11 +44,6 @@ public class MySpinnerView extends LinearLayout implements MySpinnerAdapter.Radi
     //用于下拉图标的动画
     private static final int MAX_LEVEL = 10000;
 
-    //用于状态保存
-    private static final String INSTANCE_STATE = "instance_state";
-    private static final String SELECTED_INDEX = "selected_index";
-    private static final String IS_POPUP_SHOWING = "is_popup_showing";
-
 
     private int selectedIndex;//选中的位置
     private Drawable drawable;//下拉图标
@@ -87,43 +82,7 @@ public class MySpinnerView extends LinearLayout implements MySpinnerAdapter.Radi
         init(context, attrs);
     }
 
-    @Override
-    public Parcelable onSaveInstanceState() {
-        Bundle bundle = new Bundle();
-        bundle.putParcelable(INSTANCE_STATE, super.onSaveInstanceState());
-        bundle.putInt(SELECTED_INDEX, selectedIndex);
-        bundle.putBoolean(IS_POPUP_SHOWING, isShowing);
-        dismissDropDown();
 
-        return bundle;
-    }
-
-    @Override
-    public void onRestoreInstanceState(Parcelable savedState) {
-        if (savedState instanceof Bundle) {
-            Bundle bundle = (Bundle) savedState;
-            selectedIndex = bundle.getInt(SELECTED_INDEX);
-
-            if (adapter != null) {
-                setTitle(selectedIndex);
-
-                // adapter.notifyItemSelected(selectedIndex);
-            }
-
-            if (bundle.getBoolean(IS_POPUP_SHOWING)) {
-                if (isShowing) {
-                    post(new Runnable() {
-                        @Override
-                        public void run() {
-                            showDropDown();
-                        }
-                    });
-                }
-            }
-            savedState = bundle.getParcelable(INSTANCE_STATE);
-        }
-        super.onRestoreInstanceState(savedState);
-    }
 
     /**
      * 获取相关属性attr
